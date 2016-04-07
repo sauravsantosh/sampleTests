@@ -25,7 +25,7 @@ exports.config = {
     logLevel: 'debug',
 
     coloredLogs: true,
-    baseUrl: 'http://webdriver.io',
+    baseUrl: process.env.ENV,
     waitforTimeout: 25000,
     framework: 'mocha',
 
