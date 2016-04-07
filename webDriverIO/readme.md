@@ -18,6 +18,9 @@ Example of Environment Variables set-up :
 ## NPM Install Framework and Libraries:
 
 - `Open gitBash and run : npm install -g webdriverio (for global), npm install webdriverio (for local)`
+- `npm install -g mocha (for global), npm install mocha (for local)` 
+- `npm install -g chai (for global), npm install chai (for local)` 
+- `npm install -g chai-as-promised (for global), npm install chai-as-promised (for local)` 
 
 ## Set environment:
 
