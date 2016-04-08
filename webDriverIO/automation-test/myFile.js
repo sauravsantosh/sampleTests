@@ -18,7 +18,7 @@ describe('Learn FOR and WHILE LOOP', function(){
 
 });
 
-###############
+###########################################
 
 
 var lost = [4, 8, 15, 16, 23, 42];
@@ -35,7 +35,7 @@ var isLost = function (n) {
 
 isLost(8);
 
-###############
+###########################################
 
 var power = function (base, exponent) {
   var result = 1;
@@ -47,7 +47,7 @@ var power = function (base, exponent) {
 
 power(2, 4);
 
-###################
+###########################################
 
 var cube = function (x) {
     if (typeof(x) !== 'number'){ return 0};
@@ -58,7 +58,7 @@ var cube = function (x) {
 // the cube() function should return 0.
 cube("test");
 
-###################
+###########################################
 
 var num = prompt("What number do you want to find the factorial of?")
  
@@ -155,7 +155,7 @@ if (hits.length === 0) {
 	console.log(hits);
 }
 
-#########################################
+###########################################
 
 var isEven = function(number) {
     if(number % 2 === 0){
@@ -173,7 +173,7 @@ var isEven = function(number) {
 
 isEven("asdas");
 
-###############################
+###########################################
 
 Name in Reverse
 
@@ -189,7 +189,7 @@ for(var i = count - 1; i >= 0; i--){
 
 Output - "saurav santosh"
 
-###############################
+###########################################
 
 
 var webdriverio = require('webdriverio')
