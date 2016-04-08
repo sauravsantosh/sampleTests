@@ -17,8 +17,8 @@ Example of Environment Variables set-up :
 
 ## NPM Install Framework and Libraries:
 
-`Please verify npm config : npm config list`
-`To set a new value : npm config set registry <new_value>`
+- `Please verify npm config : npm config list`
+- `To set a new value : npm config set registry <new_value>`
 
 - `Open gitBash and run : npm install -g webdriverio (for global), npm install webdriverio (for local)`
 - `npm install -g mocha (for global), npm install mocha (for local)` 
