@@ -9,6 +9,7 @@ exports.config = {
     /**
      * specify test files
      */
+     maxInstances: 1,
     specs: [
         './cucumber-tests/features/*.feature'
     ],
