@@ -7,3 +7,8 @@
 
 - `npm install wdio-cucumber-framework` for local
 - `npm install wdio-cucumber-framework -g ` for global
+
+## Run Tests
+
+- `wdio wdio.cucumber.local.js`
+
