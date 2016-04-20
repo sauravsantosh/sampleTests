@@ -32,8 +32,20 @@ module.exports = function(){
         browser.click(selector)
     });
 
+    this.When(/^user enters username "([^"]*)"$/, function (selector){
+        browser.pause(3000)
+        browser.setValue(selector, 'username')
+    });
+
+    this.When(/^user enters password "([^"]*)"$/, function (selector){
+        browser.pause(3000)
+        browser.setValue(selector, 'password')
+    });
+
     this.Then(/^should component be visible "([^"]*)"$/, function (selector){
-        browser.isExisting(selector)
+        browser.waitForVisible(selector)
+        var status = browser.isVisible(selector)
+        assert.equal(status, true)
     });
     
     this.Then(/^should the title of the page be "([^"]*)"$/, (expectedTitle) => {
