@@ -32,6 +32,10 @@ module.exports = function(){
         browser.click(selector)
     });
 
+    this.Then(/^should component be visible "([^"]*)"$/, function (selector){
+        browser.isExisting(selector)
+    });
+    
     this.Then(/^should the title of the page be "([^"]*)"$/, (expectedTitle) => {
         assert.equal(browser.getTitle(), expectedTitle)
       });
