@@ -8,7 +8,7 @@ The test runner expects a configuration file to be passed, using by default a ni
 
 ## Run Test
 
-`nightwatch --test nightwatch-tests/tests/webdriverio.test.js` - runs single test file
-`nightwatch --testcase nightwatch-tests/tests/*.js` - runs all test files in a folder
+- `nightwatch --test nightwatch-tests/tests/webdriverio.test.js` - runs single test file
+- `nightwatch --testcase nightwatch-tests/tests/*.js` - runs all test files in a folder
 
 Remember always to call the .end() method when you want to close your test, in order for the Selenium session to be properly closed.
