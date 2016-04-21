@@ -28,8 +28,15 @@ module.exports = function(){
     //     browser.click(selector)
     // })
 
-    this.Then(/^I click on link "([^"]*)"$/, function (selector){
+    this.When(/^I click on link "([^"]*)"$/, function (selector){
+        browser.waitForVisible(selector)
         browser.click(selector)
+    });
+
+    this.When(/^I click on searchbox "([^"]*)" and enter search keyword "([^"]*)"$/, function (selector, value){
+        browser.click(selector)
+        browser.setValue(selector, value)
+        browser.keys("\ue007")
     });
 
     this.When(/^user enters username "([^"]*)"$/, function (selector){
@@ -47,7 +54,7 @@ module.exports = function(){
         var status = browser.isVisible(selector)
         assert.equal(status, true)
     });
-    
+
     this.Then(/^should the title of the page be "([^"]*)"$/, (expectedTitle) => {
         assert.equal(browser.getTitle(), expectedTitle)
       });
