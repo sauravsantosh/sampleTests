@@ -76,4 +76,5 @@ Those wrappers are run before executing the feature suite. `this` is an object h
 
 Please refer an example file [here](https://github.com/sauravsantosh/sampleTests/blob/master/wdio-cucumber/cucumber-tests/step-definitions.js)
 
+#### [Scenario Outline](https://github.com/cucumber/cucumber/wiki/Scenario-Outlines)
 
