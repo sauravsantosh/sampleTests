@@ -78,3 +78,20 @@ Please refer an example file [here](https://github.com/sauravsantosh/sampleTests
 
 #### [Scenario Outline](https://github.com/cucumber/cucumber/wiki/Scenario-Outlines)
 
+Scenario outlines allow us to more concisely express these examples through the use of a template with placeholders, using `Scenario Outline`, `Examples` with tables and `< >` delimited parameters:
+
+```gherkin
+Scenario Outline: eating
+  Given there are <start> cucumbers
+  When I eat <eat> cucumbers
+  Then I should have <left> cucumbers
+
+  Examples:
+    | start | eat | left |
+    |  12   |  5  |  7   |
+    |  20   |  5  |  15  |
+```
+
+The Scenario Outline steps provide a template which is never directly run. A Scenario Outline is run once for each row in the `Examples` section beneath it (not counting the first row).
+
+
