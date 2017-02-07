@@ -33,58 +33,58 @@ If you want to use the automation helpers you must fulfill a few requirements in
 
 ### Npm Script examples
     
-    For an application project you can use something like:
+For an application project you can use something like:
     
-    ```json
-    {
-      "scripts": {
-        "test": "karma start",
-        "build": "webpack --progress --colors",
-        "server": "fusion-dev-server serve-app --basePath f2",
-      }
-    }
-    ```
-    `serve-app` options
+```json
+{
+  "scripts": {
+    "build": "webpack --progress --colors",
+    "server": "fusion-dev-server serve-app --basePath f2"
+  }
+}
+```
+`serve-app` options
 
-    * `--env [dev|qa|uat]`: The environment you want to target for all remote files. Defaults to `dev`.
-    * `--channel [fusion|hq|truequote]`: The channel shell you want to target. Defaults to `fusion`.
-    * `--basePath [app|f2]`: The shell path on the remote environment. Defaults to `app`.
+* `--env [dev|qa|uat]`: The environment you want to target for all remote files. Defaults to `dev`.
+* `--channel [fusion|hq|truequote]`: The channel shell you want to target. Defaults to `fusion`.
+* `--basePath [app|f2]`: The shell path on the remote environment. Defaults to `app`.
 
-    ```json
-    {
-      "scripts": {
-        "server": "fusion-dev-server serve-app --env qa --channel hq",
+```json
+ {
+    "scripts": {
+       "server": "fusion-dev-server serve-app --env qa --channel hq",
+     }
+ }
+```
+    
+For a library that exports a visual component you can use something like:
+    
+```json
+ {
+   "scripts": {
+      "build": "webpack --progress --colors",
+      "server": "fusion-dev-server serve-lib"
       }
     }
-    ```
-    
-    For a library that exports a visual component you can use something like:
-    
-    ```json
-    {
-      "scripts": {
-        "build": "webpack --progress --colors",
-        "server": "fusion-dev-server serve-lib"
-      }
-    }
-    ```
+```
+
 ## Installation
     
-    Add the `@icap/automate` dependency to your project:
+Add the `@icap/automate` dependency to your project:
     
-    ```sh
-    $ npm install --save-dev @icap/automate
-    ```
+```sh
+  $ npm install --save-dev @icap/automate
+```
     
-    The module exports a Grunt task for handling the browser automation, so add a `Gruntfile.js` file with the contents:
+The module exports a Grunt task for handling the browser automation, so add a `Gruntfile.js` file with the contents:
     
-    ```javascript
-    module.exports = function (grunt) {
-      grunt.loadNpmTasks('@icap/automate')
-    }
-    ```
+```javascript
+module.exports = function (grunt) {
+ grunt.loadNpmTasks('@icap/automate')
+}
+```
     
-    That should be enough to get everything working.
+That should be enough to get everything working.
 
 ## Usage
 
