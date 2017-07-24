@@ -1,17 +1,17 @@
 var chakram = require('chakram');
 var expect = chakram.expect;
 var requestDefault = chakram.setRequestDefaults({
-    proxy: 'http://aws-proxy.uk.icap.com:8080'
+    proxy: '<enter_here>'
 });
 
 describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function() {
 
     var env = "uat";
-    var channel = "fusion";
+    var channel = "xyz";
     this.timeout(5000);
 
     it("Validate Session - unauthorised SP session sends expected statusCode", function() {
-        var baseUrl = "https://" + env + ".icap" + channel + ".com/api/sp/v1/saml2/" + channel + "/validateSession"
+        var baseUrl = "https://" + env + ".google" + channel + ".com/api/sp/v1/saml2/" + channel + "/validateSession"
         var apiRequest = chakram.get(baseUrl);
         return apiRequest.then(function(res) {
             var status = res.response.statusCode;
@@ -28,7 +28,7 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
     });
 
     it("User Logout - when user have invalid SP session", function() {
-        var baseUrl = "https://" + env + ".icap" + channel + ".com/api/sp/v1/saml2/" + channel + "/userLogout"
+        var baseUrl = "https://" + env + ".google" + channel + ".com/api/sp/v1/saml2/" + channel + "/userLogout"
         var apiRequest = chakram.post(baseUrl);
         return apiRequest.then(function(res) {
             var status = res.response.statusCode;
@@ -45,7 +45,7 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
     });
 
     it("Create Session - invalid request url", function() {
-      var baseUrl = "https://" + env + ".icap" + channel + ".com/api/sp/v1/saml2/" + channel + "/validateSessionxx"
+      var baseUrl = "https://" + env + ".google" + channel + ".com/api/sp/v1/saml2/" + channel + "/validateSessionxx"
       var apiRequest = chakram.get(baseUrl);
         return apiRequest.then(function(res) {
             var status = res.response.statusCode;
@@ -62,7 +62,7 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
     });
 
     it("Create Session - invalid SP session", function() {
-        var baseUrl = "https://" + env + ".icap" + channel + ".com/api/sp/v1/saml2/" + channel + "/createSession"
+        var baseUrl = "https://" + env + ".google" + channel + ".com/api/sp/v1/saml2/" + channel + "/createSession"
         var apiRequest = chakram.post(baseUrl);
         return apiRequest.then(function(res) {
             var status = res.response.statusCode;
@@ -79,7 +79,7 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
     });
 
     it("Create Session - invalid SP session", function() {
-        var baseUrl = "https://" + env + ".icap" + channel + ".com/api/sp/v1/saml2/" + channel + "/createSession"
+        var baseUrl = "https://" + env + ".google" + channel + ".com/api/sp/v1/saml2/" + channel + "/createSession"
         var apiRequest = chakram.post(baseUrl);
         return apiRequest.then(function(res) {
             var status = res.response.statusCode;
@@ -97,11 +97,11 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
 
     it("IDP - User Recovery Validation AD user", function() {
         var payload = {
-	                     "username": "saurav.santosh@icap.com",
+	                     "username": "saurav.sntsh@gmail.com",
 	                      "emailTemplate": "hq",
 	                       "env": "uat"
                        }
-        var baseUrl = "https://" + env + ".icap" + channel + ".com/api/idp/v1/user/recovery"
+        var baseUrl = "https://" + env + ".google" + channel + ".com/api/idp/v1/user/recovery"
         var apiRequest = chakram.post(baseUrl, payload);
         return apiRequest.then(function(res) {
              var status = res.response.statusCode;
@@ -119,11 +119,11 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
 
     it("IDP - User Recovery Incorrect email address", function() {
         var payload = {
-	                     "username": "abc@icap.com",
+	                     "username": "abc@gmail.com",
 	                      "emailTemplate": "hq",
 	                       "env": "uat"
                        }
-        var baseUrl = "https://" + env + ".icap" + channel + ".com/api/idp/v1/user/recovery"
+        var baseUrl = "https://" + env + ".google" + channel + ".com/api/idp/v1/user/recovery"
         var apiRequest = chakram.post(baseUrl, payload);
         return apiRequest.then(function(res) {
              var status = res.response.statusCode;
@@ -141,11 +141,11 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
 
     it("IDP - User Recovery Validation test user", function() {
         var payload = {
-	                     "username": "ssqa_test25@icap.com",
+	                     "username": "ssqa_test25@gmail.com",
 	                      "emailTemplate": "hq",
 	                       "env": "uat"
                        }
-        var baseUrl = "https://" + env + ".icap" + channel + ".com/api/idp/v1/user/recovery"
+        var baseUrl = "https://" + env + ".google" + channel + ".com/api/idp/v1/user/recovery"
         var apiRequest = chakram.post(baseUrl, payload);
         return apiRequest.then(function(res) {
              var status = res.response.statusCode;
@@ -162,7 +162,7 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
     });
 
     it("User Manifest - Request and validation", function() {
-        var baseUrl = "https://" + env + ".icap" + channel + ".com/api/bootstrap/v2/manifest/" + channel
+        var baseUrl = "https://" + env + ".google" + channel + ".com/api/bootstrap/v2/manifest/" + channel
         var apiRequest = chakram.get(baseUrl);
         return apiRequest.then(function(res) {
              var status = res.response.statusCode;
@@ -172,7 +172,7 @@ describe("API Tests - Endpoint Validation (SP, IDP & User Manifest)", function()
 
              expect(status).to.equal(200);
              expect(statusMessage).to.equal("OK");
-             expect(staticUrl).to.equal("https://" + env + "static.icap" + channel + ".com");
+             expect(staticUrl).to.equal("https://" + env + "static.google" + channel + ".com");
              expect(swfPath).to.equal("/modules");
         });
         return chakram.wait();
